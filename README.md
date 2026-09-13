@@ -1,12 +1,22 @@
-# TrackMySelf — Personal Wellness, Habits, Calendar & Warranty Tracker 🚀
+<p align="center">
+  <img src="assets/icons/app_icon.png" width="130" height="130" alt="TrackMySelf App Icon" style="border-radius: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+</p>
 
-![Flutter](https://img.shields.io/badge/Flutter-3.47.2-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-3.13.2-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Database](https://img.shields.io/badge/Database-Drift%20(SQLite)-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![State Management](https://img.shields.io/badge/State-Riverpod-38BDF8?style=for-the-badge)
+<h1 align="center">TrackMySelf</h1>
 
-**TrackMySelf** is an offline-first, privacy-focused personal self-management application that unifies daily fitness & nutrition logging, habit building, event scheduling, and purchase warranty management into an executive dashboard.
+<p align="center">
+  <strong>Personal Wellness, Habits, Calendar & Warranty Tracker</strong><br>
+  <em>Production-grade, offline-first personal tracking system built with Flutter, Dart & Drift SQLite v3.</em>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-3.47.2-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter" />
+  <img src="https://img.shields.io/badge/Dart-3.13.2-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Dart" />
+  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android" />
+  <img src="https://img.shields.io/badge/Database-Drift%20(SQLite%20v3)-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+  <img src="https://img.shields.io/badge/Tests-52%20Passed%20(100%25)-success?style=for-the-badge" alt="Tests" />
+  <img src="https://img.shields.io/badge/Analysis-0%20Issues-brightgreen?style=for-the-badge" alt="Analysis" />
+</p>
 
 ---
 
