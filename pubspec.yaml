@@ -1,0 +1,68 @@
+name: track_my_self
+description: "TrackMySelf — Personal life, fitness, routine, calendar & purchase tracking."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management
+  flutter_riverpod: ^3.0.0
+  riverpod_annotation: ^4.0.0
+
+  # Local database (Drift / SQLite)
+  drift: ^2.22.1
+  drift_flutter: ^0.2.4
+
+  # Navigation
+  go_router: ^14.6.1
+
+  # Local notifications
+  flutter_local_notifications: ^18.0.1
+
+  # Date/time formatting
+  intl: ^0.20.2
+
+  # Image selection (receipts)
+  image_picker: ^1.1.2
+
+  # Charts
+  fl_chart: ^0.70.2
+
+  # File system paths
+  path: ^1.9.1
+  path_provider: ^2.1.5
+
+  # Google Fonts (Inter)
+  google_fonts: ^6.2.1
+  timezone: ^0.10.1
+  flutter_timezone: ^5.1.0
+  crypto: ^3.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+  # Code generation
+  build_runner: ^2.4.13
+  drift_dev: ^2.22.1
+  riverpod_generator: ^4.0.0
+  custom_lint: ^0.8.1
+  riverpod_lint: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
