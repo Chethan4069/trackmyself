@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TrackMySelf - 20 Essential Interview Questions & Answers</title>
+<style>
+  @page {
+    size: A4;
+    margin: 15mm 14mm 15mm 14mm;
+  }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.5;
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+  }
+  h1, h2, h3 { color: #0f172a; margin-top: 0; font-weight: 700; }
+  p { margin: 0.3em 0; text-align: justify; }
+  ul, ol { margin: 0.3em 0; padding-left: 20px; }
+  li { margin-bottom: 0.25em; }
+
+  /* Cover Page */
+  .cover {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px solid #2563eb;
+    border-radius: 12px;
+    padding: 36px;
+    background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    page-break-after: always;
+  }
+  .cover h1 {
+    font-size: 25pt;
+    color: #1e3a8a;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .cover .subtitle {
+    font-size: 13pt;
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .cover .tagline {
+    font-size: 11pt;
+    color: #475569;
+    margin-bottom: 25px;
+  }
+  .meta-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+  .meta-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .meta-table td:first-child {
+    font-weight: 600;
+    color: #334155;
+    width: 32%;
+  }
+
+  /* QA Cards */
+  .qa-card {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    overflow: hidden;
+  }
+  .qa-header {
+    background: #f1f5f9;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .q-badge {
+    background: #1e40af;
+    color: #ffffff;
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .category-badge {
+    margin-left: 10px;
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #475569;
+  }
+  .q-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #0f172a;
+    padding: 10px 14px 6px 14px;
+  }
+  .answer-box {
+    padding: 4px 14px 12px 14px;
+    color: #334155;
+    font-size: 9.5pt;
+    line-height: 1.5;
+  }
+  code {
+    font-family: "Consolas", monospace;
+    background: #f1f5f9;
+    color: #0f172a;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 8.5pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div style="font-size: 10.5pt; color: #2563eb; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
+    Technical & Behavioral Interview Dossier
+  </div>
+  <h1>TrackMySelf</h1>
+  <div class="subtitle">20 Essential Interview Questions & High-Impact Model Answers</div>
+  <div class="tagline">Production-Grade Mobile Engineering in Flutter, Dart & Drift SQLite v3</div>
+  
+  <p style="font-size: 9.5pt; color: #334155; line-height: 1.6;">
+    This document contains 20 fully articulated, interview-ready answers covering architectural decision-making, state management, database schema migrations, mathematical algorithms, hardware integration, automated test coverage, and live demonstration scripts.
+  </p>
+
+  <table class="meta-table">
+    <tr>
+      <td>Candidate / Developer:</td>
+      <td><strong>Chethan G S</strong></td>
+    </tr>
+    <tr>
+      <td>GitHub Repository:</td>
+      <td><a href="https://github.com/Chethan4069/trackmyself" style="color:#2563eb; text-decoration:none;">github.com/Chethan4069/trackmyself</a></td>
+    </tr>
+    <tr>
+      <td>Primary Tech Stack:</td>
+      <td>Flutter 3.x, Dart 3.x, Drift ORM (SQLite v3), Provider, GoRouter</td>
+    </tr>
+    <tr>
+      <td>Automated Testing:</td>
+      <td><strong>52 Unit / DAO / Domain Tests (100% Pass Rate)</strong></td>
+    </tr>
+    <tr>
+      <td>Code Quality:</td>
+      <td><strong>0 Lints / 0 Warnings</strong> (dart analyze clean)</td>
+    </tr>
+    <tr>
+      <td>Production Artifact:</td>
+      <td>Optimized Release APK (64.3 MB)</td>
+    </tr>
+  </table>
+
+  <div style="margin-top: 30px; font-size: 8.5pt; color: #64748b; border-top: 1px solid #cbd5e1; padding-top: 12px;">
+    Designed for Mobile Software Engineer, Flutter Developer, and Full-Stack App Developer Interviews.
+  </div>
+</div>
+
+<!-- QUESTIONS CONTENT -->
+<h2 style="font-size: 15pt; color: #1e3a8a; border-bottom: 2px solid #2563eb; padding-bottom: 4px; margin-bottom: 14px;">
+  Interview Questions & Answers
+</h2>
+
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 1</span>
+    <span class="category-badge">Project Overview</span>
+  </div>
+  <div class="q-title">Tell me about your project.</div>
+  <div class="answer-box">
+    I built <strong>TrackMySelf</strong>, a production-grade, offline-first personal management and wellness mobile application developed using <strong>Flutter, Dart, and Drift ORM (SQLite v3)</strong>.
+<br><br>
+The application consolidates four fragmented aspects of daily personal life into a single cohesive, high-performance experience:
+<ul>
+  <li><strong>Health & Fitness:</strong> Calorie tracking, macro breakdown, Mifflin-St Jeor metabolic calculations (BMR/TDEE), and visual body transformation progress galleries with weight delta tracking.</li>
+  <li><strong>Daily Routines & Habits:</strong> Habit tracking with an automated contiguous streak calculation engine, time-of-day filtering, and scheduled local notifications.</li>
+  <li><strong>Time & Agendas:</strong> An interactive monthly calendar with category-coded multi-event dot indicators and scheduled agenda reminders.</li>
+  <li><strong>Memory & Asset Tracker:</strong> A purchase and warranty management tool with camera/gallery receipt capture and automated 7-day pre-expiry alerts.</li>
+</ul>
+The application follows Clean Architecture with Provider state management, is validated by <strong>52 automated unit, domain, and DAO tests (100% pass rate)</strong>, has <strong>0 static analysis warnings</strong>, and compiles to an optimized 64 MB release APK.
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 2</span>
+    <span class="category-badge">Problem Statement & Value</span>
+  </div>
+  <div class="q-title">What problem does your project solve?</div>
+  <div class="answer-box">
+    Most users currently need 4 to 5 separate apps—one for calorie tracking (like MyFitnessPal), one for habits (like Habitica), one for calendar events, and another to keep track of purchase receipts and warranties. This creates app fatigue, high recurring subscription costs, and major privacy concerns because sensitive health and financial data are stored on third-party cloud servers.
+<br><br>
+<strong>TrackMySelf solves this by:</strong>
+<ul>
+  <li><strong>Consolidating Workflows:</strong> Unifying fitness, habit building, agenda management, and asset tracking into a single executive dashboard with real-time vitals and summary tiles.</li>
+  <li><strong>100% Data Privacy & Offline Guarantee:</strong> Storing all relational data, photos, and calculations entirely on the device using an embedded SQLite database, requiring zero internet connection and zero cloud subscriptions.</li>
+  <li><strong>Zero Latency:</strong> Immediate response times with no network loading spinners or offline sync conflicts.</li>
+</ul>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 3</span>
+    <span class="category-badge">Motivation & Objectives</span>
+  </div>
+  <div class="q-title">Why did you choose this project?</div>
+  <div class="answer-box">
+    I chose this project because I wanted to tackle complex, real-world mobile engineering challenges beyond basic CRUD apps. I wanted to demonstrate:
+<ul>
+  <li><strong>Relational Data Modeling:</strong> Designing a normalized SQLite database with foreign keys, cascading rules, and multi-user isolation across 7 tables.</li>
+  <li><strong>Algorithmic Complexity:</strong> Writing robust mathematical algorithms for metabolic equations (Mifflin-St Jeor), contiguous habit streak counting with date rollover tolerance, and real-time warranty lifecycle calculations.</li>
+  <li><strong>Hardware & OS Integration:</strong> Managing local background alarms, device reboot listeners, camera/gallery file system sandboxing, and haptic feedback.</li>
+  <li><strong>Production Readiness:</strong> Writing an automated test suite of 52 unit tests, adhering to strict clean architecture, and achieving zero static analysis warnings.</li>
+</ul>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 4</span>
+    <span class="category-badge">Ownership & Responsibility</span>
+  </div>
+  <div class="q-title">What was your role in the project?</div>
+  <div class="answer-box">
+    I was the <strong>lead full-lifecycle mobile developer</strong>. I was responsible for:
+<ul>
+  <li>Architecting the application using Clean Architecture and the Feature-First directory structure.</li>
+  <li>Designing the Drift SQLite v3 schema and managing database migrations across versions.</li>
+  <li>Implementing domain logic, state management (Provider), and custom UI components.</li>
+  <li>Integrating native Android notification channels and sandboxed file system image storage.</li>
+  <li>Writing the comprehensive test suite of 52 unit/DAO tests and generating the release build.</li>
+</ul>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 5</span>
+    <span class="category-badge">Teamwork & Collaboration</span>
+  </div>
+  <div class="q-title">Did you work individually or in a team?</div>
+  <div class="answer-box">
+    I worked on this project <strong>individually</strong>.
+<br><br>
+Doing this end-to-end allowed me to master every phase of modern Flutter app engineering—from UI design and state architecture to low-level SQLite schema migrations, hardware permission handling, test automation, and release APK optimization. It gave me a thorough, 360-degree understanding of mobile application development and lifecycle management.
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 6</span>
+    <span class="category-badge">Technology Stack & Decisions</span>
+  </div>
+  <div class="q-title">What technologies did you use and why?</div>
+  <div class="answer-box">
+    <ul>
+  <li><strong>Flutter & Dart 3.x:</strong> Cross-platform single codebase with native 60–120 FPS performance and strong compile-time type safety.</li>
+  <li><strong>Drift ORM (SQLite):</strong> Provides compile-time verified SQL queries, automatic schema migrations, and reactive <code>watch()</code> streams for live UI updates without runtime SQL syntax bugs.</li>
+  <li><strong>Provider & ChangeNotifier:</strong> Lightweight, decoupled reactive state management with low boilerplate and granular widget rebuild controls via <code>Consumer</code> and <code>Selector</code>.</li>
+  <li><strong>GoRouter:</strong> Declarative, URL-based routing supporting nested routes and authentication redirection guards.</li>
+  <li><strong>flutter_local_notifications & flutter_timezone:</strong> Reliable on-device background alarm scheduling without battery-draining foreground services.</li>
+  <li><strong>image_picker & path_provider:</strong> Capturing camera/gallery images and copying them from temporary cache into persistent sandboxed app documents storage.</li>
+</ul>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 7</span>
+    <span class="category-badge">System Architecture</span>
+  </div>
+  <div class="q-title">Explain the architecture of your project.</div>
+  <div class="answer-box">
+    The project follows <strong>Clean Architecture</strong> with a <strong>Feature-First</strong> structure.
+<br><br>
+Inside <code>lib/</code>, code is divided into <code>core/</code> (shared database, themes, notification services, shared widgets) and feature modules (<code>auth/</code>, <code>fitness/</code>, <code>habits/</code>, <code>calendar/</code>, <code>purchases/</code>, <code>home/</code>).
+<br><br>
+Each feature is organized into three distinct layers:
+<ol>
+  <li><strong>Data Layer:</strong> Contains DAOs (Data Access Objects) and database tables that communicate with Drift SQLite.</li>
+  <li><strong>Domain Layer:</strong> Contains pure Dart entities, calculators (e.g., BMR, streaks, warranty state), and business rules with zero Flutter UI dependencies.</li>
+  <li><strong>Presentation Layer:</strong> Contains UI screens, reusable widgets, and <code>ChangeNotifier</code> providers that bind the domain to the view.</li>
+</ol>
+This strict separation allowed me to test all business logic in isolation using in-memory databases.
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 8</span>
+    <span class="category-badge">Application Flow</span>
+  </div>
+  <div class="q-title">Explain the complete flow of your application.</div>
+  <div class="answer-box">
+    <ol>
+  <li><strong>App Launch & Auth Guard:</strong> <code>main.dart</code> initializes timezones, spins up the Drift database singleton, and loads the active user session. If no session exists, <code>GoRouter</code> redirects to the Login/Registration screen.</li>
+  <li><strong>Onboarding & Profile Setup:</strong> A new user inputs age, gender, height, weight, and activity level. The system calculates and persists their baseline BMR and TDEE.</li>
+  <li><strong>Executive Dashboard (Home):</strong> The user sees a scenic sunrise mountain header, daily motivational quote, real-time vitals strip, and a 4-tile health card summarizing calories consumed vs. burned, active habits, and today's schedule.</li>
+  <li><strong>Daily Logging & Interaction:</strong>
+    <ul>
+      <li>In <strong>Fitness</strong>, the user logs meals and workouts; progress rings update dynamically. Users can snap transformation progress photos and view weight deltas.</li>
+      <li>In <strong>Habits</strong>, checking off a habit triggers haptic feedback, increments the streak counter, and updates the daily completion banner.</li>
+      <li>In <strong>Calendar</strong>, the user schedules events with optional notification alerts.</li>
+      <li>In <strong>Purchases</strong>, the user logs items, attaches receipt photos, and sets warranty periods.</li>
+    </ul>
+  </li>
+</ol>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 9</span>
+    <span class="category-badge">Technical Difficulty</span>
+  </div>
+  <div class="q-title">What was the most difficult part of the project?</div>
+  <div class="answer-box">
+    The most complex part was <strong>retrofitting multi-user data isolation across legacy tables via Drift schema migrations (v1 to v3) without corrupting existing records</strong>.
+<br><br>
+Initially, the schema was single-user. When introducing authentication, every table required a non-nullable <code>userId</code> foreign key. I had to write a custom <code>MigrationStrategy.onUpgrade</code> script that inspected schema versions, created the <code>Users</code> table, added the new foreign key column with fallback defaults to preserve legacy data, and ensured that every DAO query strictly filtered by <code>currentUserId</code> to prevent cross-account data leaks.
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 10</span>
+    <span class="category-badge">Engineering Challenges</span>
+  </div>
+  <div class="q-title">What challenges did you face?</div>
+  <div class="answer-box">
+    <ol>
+  <li><strong>Habit Streak Midnight Reset Bug:</strong> Streaks were resetting to 0 if checked early in the morning before completing a habit for that day.</li>
+  <li><strong>Android 12+ / 14 Exact Alarm Restrictions:</strong> Background reminders failed on newer Android versions due to strict battery optimization policies and uninitialized time zones.</li>
+  <li><strong>Image Cache & Disk Leaks:</strong> Receipt and transformation photos were disappearing after OS cache cleanups, or lingering orphaned when records were deleted.</li>
+  <li><strong>UI Layout Constraints:</strong> Images in the header and quote banners were either being clipped at the edges or distorted across different phone screen aspect ratios.</li>
+</ol>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 11</span>
+    <span class="category-badge">Problem Solving</span>
+  </div>
+  <div class="q-title">How did you solve those challenges?</div>
+  <div class="answer-box">
+    <ul>
+  <li><strong>For Streaks:</strong> I adjusted the streak anchor algorithm to accept either <em>today</em> OR <em>yesterday</em> as the valid contiguous starting date, providing a 1-day grace period.</li>
+  <li><strong>For Notifications:</strong> I initialized the tz database via <code>flutter_timezone</code>, declared <code>SCHEDULE_EXACT_ALARM</code> and <code>POST_NOTIFICATIONS</code> in <code>AndroidManifest.xml</code>, and registered <code>RECEIVE_BOOT_COMPLETED</code> to reschedule alarms after a reboot.</li>
+  <li><strong>For Images:</strong> I copied temporary camera files directly into <code>getApplicationDocumentsDirectory()</code> and implemented automatic <code>File(path).delete()</code> hooks when database records are deleted.</li>
+  <li><strong>For UI Layout:</strong> I wrapped images in responsive containers using <code>BoxFit.cover</code> paired with <code>Alignment.topCenter</code> and uncropped card structures.</li>
+</ul>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 12</span>
+    <span class="category-badge">Key Takeaways & Growth</span>
+  </div>
+  <div class="q-title">What did you learn from this project?</div>
+  <div class="answer-box">
+    <ul>
+  <li>How to architect a true <strong>offline-first</strong> relational system in Flutter.</li>
+  <li>Advanced SQLite schema migration strategies using Drift.</li>
+  <li>How to write effective, fast-running unit tests using in-memory databases (<code>NativeDatabase.memory()</code>).</li>
+  <li>Modern Android system permissions, background scheduling, and lifecycle management.</li>
+  <li>How to optimize widget trees using <code>const</code> constructors, <code>TweenAnimationBuilder</code>, and selective rebuilding.</li>
+</ul>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 13</span>
+    <span class="category-badge">Future Roadmap</span>
+  </div>
+  <div class="q-title">What would you improve if you had more time?</div>
+  <div class="answer-box">
+    <ol>
+  <li><strong>Biometric Authentication:</strong> Integrate <code>local_auth</code> for Face ID / Fingerprint unlock.</li>
+  <li><strong>Cloud Backup & Two-Way Sync:</strong> Implement a sync service using Supabase or Firebase with timestamp vector conflict resolution.</li>
+  <li><strong>Data Export / Import:</strong> Allow users to export and import their full history as an encrypted JSON or SQLite backup file.</li>
+  <li><strong>Wear OS / Smartwatch Companion:</strong> A lightweight watch interface for quick habit check-offs and water logging.</li>
+</ol>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 14</span>
+    <span class="category-badge">Quality Assurance & Testing</span>
+  </div>
+  <div class="q-title">How did you test your project?</div>
+  <div class="answer-box">
+    I wrote <strong>52 automated unit, DAO, and domain tests</strong>:
+<ul>
+  <li><strong>Domain Unit Tests:</strong> Validated pure mathematical functions (Mifflin-St Jeor formula, macro conversions, warranty state transitions).</li>
+  <li><strong>DAO & Database Tests:</strong> Spun up isolated in-memory SQLite instances (<code>NativeDatabase.memory()</code>) to verify CRUD operations, foreign-key cascade deletions, and query filters.</li>
+  <li><strong>Edge Case Tests:</strong> Tested leap years, 1-day grace periods in streaks, duplicate email registration, and 7-day pre-expiry alerts.</li>
+  <li><strong>Static Analysis:</strong> Enforced strict linting rules; <code>dart analyze</code> passes with 0 issues.</li>
+</ul>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 15</span>
+    <span class="category-badge">Error Handling & Reliability</span>
+  </div>
+  <div class="q-title">How did you handle errors?</div>
+  <div class="answer-box">
+    <ul>
+  <li><strong>UI Input Validation:</strong> Used <code>AutovalidateMode.onUserInteraction</code> with standard <code>FormState</code> keys to validate emails, positive numbers, and required fields in real time.</li>
+  <li><strong>Async Try-Catch Blocks:</strong> Wrapped database transactions and file I/O operations in structured <code>try-catch</code> blocks, surfacing user-friendly messages via <code>SnackBar</code> or modal alerts rather than raw technical errors.</li>
+  <li><strong>Null Safety:</strong> Strict compile-time Dart null-safety guarantees throughout the entire codebase.</li>
+</ul>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 16</span>
+    <span class="category-badge">Data Persistence</span>
+  </div>
+  <div class="q-title">How did you store and retrieve data?</div>
+  <div class="answer-box">
+    Data is persisted locally using <strong>Drift ORM with SQLite v3</strong>:
+<ul>
+  <li><strong>Structured Data:</strong> Stored across 7 relational tables with indexes on <code>userId</code> and timestamp columns.</li>
+  <li><strong>Retrieval:</strong> For static screens, queries use <code>.get()</code>. For dynamic dashboards, queries use <code>.watch()</code>, which returns a reactive Dart <code>Stream</code> that automatically emits new data whenever an underlying table changes.</li>
+  <li><strong>Binary Assets:</strong> Receipt and progress images are saved to the phone's sandboxed document directory, with their file paths stored as strings in SQLite.</li>
+</ul>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 17</span>
+    <span class="category-badge">Application Security</span>
+  </div>
+  <div class="q-title">How did you make your application secure?</div>
+  <div class="answer-box">
+    <ol>
+  <li><strong>No Plaintext Passwords:</strong> User passwords are encrypted/hashed with standard SHA-256 before being saved to SQLite.</li>
+  <li><strong>Multi-User Isolation:</strong> Every query strictly enforces the authenticated <code>userId</code>, ensuring complete privacy on shared devices.</li>
+  <li><strong>Sandboxed File Storage:</strong> All photos are kept inside the app's private sandboxed directory, inaccessible to other third-party apps on the device without root access.</li>
+  <li><strong>No External Exposure:</strong> Because the app operates offline-first, personal data is never transmitted over insecure networks.</li>
+</ol>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 18</span>
+    <span class="category-badge">Scalability & Cloud Architecture</span>
+  </div>
+  <div class="q-title">How would you scale this application for 10,000 to 100,000 users?</div>
+  <div class="answer-box">
+    Since the app is offline-first, client performance is already decentralized—each phone runs its own SQLite engine independently, so client CPU and database costs do not multiply with user growth.
+<br><br>
+<strong>To add cloud synchronization for 100,000+ users:</strong>
+<ol>
+  <li><strong>Backend:</strong> Deploy a horizontally scalable REST or GraphQL API (Go, Node.js, or Supabase/PostgreSQL) behind an AWS Application Load Balancer.</li>
+  <li><strong>Sync Protocol:</strong> Implement an incremental change-data-capture (CDC) sync engine using <code>updatedAt</code> timestamps and soft deletes (<code>isDeleted = true</code>) to sync only modified rows.</li>
+  <li><strong>Media Storage:</strong> Offload receipt and body photos to Amazon S3 or Google Cloud Storage using pre-signed upload URLs and CDN caching (CloudFront).</li>
+  <li><strong>Caching & Queueing:</strong> Use Redis for auth token caching and rate limiting.</li>
+</ol>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 19</span>
+    <span class="category-badge">Deployment & CI/CD</span>
+  </div>
+  <div class="q-title">How would you deploy this project?</div>
+  <div class="answer-box">
+    <ol>
+  <li><strong>Production Build:</strong> Run <code>flutter build apk --release</code> (or <code>appbundle</code> for Google Play), using ProGuard/R8 to minify bytecode, strip unused resources, and tree-shake unused icons.</li>
+  <li><strong>Signing:</strong> Configure <code>key.properties</code> with an RSA release keystore.</li>
+  <li><strong>CI/CD Pipeline:</strong> Set up GitHub Actions or Codemagic to automatically run <code>flutter test</code> and <code>dart analyze</code> on every pull request, build the signed AAB/IPA, and deploy directly to Google Play Internal Testing / Apple TestFlight tracks.</li>
+</ol>
+  </div>
+</div>
+
+<div class="qa-card no-break">
+  <div class="qa-header">
+    <span class="q-badge">Question 20</span>
+    <span class="category-badge">Live Demonstration Script</span>
+  </div>
+  <div class="q-title">Can you demonstrate the project?</div>
+  <div class="answer-box">
+    <em>"Absolutely! Let me walk you through the app on my device/emulator:</em>
+<ol>
+  <li><em>First, here is the <strong>Login & Multi-User Switcher</strong>. Let's log into our primary profile.</em></li>
+  <li><em>This brings us to the <strong>Executive Home Dashboard</strong>—notice the smooth scenic header, our daily quote, and the real-time calorie burn vs. intake ring.</em></li>
+  <li><em>Let's navigate to <strong>Fitness</strong>: notice how adding a meal instantly animates the macro bars. At the bottom, here is our <strong>Body Transformation Gallery</strong> comparing progress photos with weight delta badges.</em></li>
+  <li><em>In <strong>Habits</strong>, tapping to complete a routine triggers immediate haptic feedback and updates the contiguous streak.</em></li>
+  <li><em>Finally, in <strong>Purchases</strong>, you can see our dynamic warranty engine highlighting items that are expiring within 7 days, complete with full-screen receipt photo viewing.</em></li>
+</ol>
+<em>Everything you see is updating via reactive SQLite streams with 100% offline persistence."</em>
+  </div>
+</div>
+
+
+</body>
+</html>
