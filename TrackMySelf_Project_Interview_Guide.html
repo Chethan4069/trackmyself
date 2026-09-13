@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TrackMySelf - Complete Technical & Interview Preparation Guide</title>
+<style>
+  @page {
+    size: A4;
+    margin: 16mm 14mm 16mm 14mm;
+  }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.55;
+    font-size: 10.5pt;
+    margin: 0;
+    padding: 0;
+  }
+  h1, h2, h3, h4 { color: #0f172a; margin-top: 1.2em; margin-bottom: 0.4em; font-weight: 700; }
+  h1 { font-size: 20pt; border-bottom: 2.5px solid #2563eb; padding-bottom: 6px; }
+  h2 { font-size: 14pt; border-bottom: 1.5px solid #cbd5e1; padding-bottom: 4px; margin-top: 1.4em; }
+  h3 { font-size: 11.5pt; color: #1d4ed8; margin-top: 1em; }
+  h4 { font-size: 10.5pt; color: #334155; margin-top: 0.8em; }
+  p { margin: 0.4em 0; text-align: justify; }
+  ul, ol { margin: 0.4em 0; padding-left: 20px; }
+  li { margin-bottom: 0.3em; }
+
+  /* Cover Page */
+  .cover {
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px solid #2563eb;
+    border-radius: 12px;
+    padding: 40px 36px;
+    background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    page-break-after: always;
+  }
+  .cover h1 {
+    font-size: 28pt;
+    color: #1e3a8a;
+    border-bottom: none;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .cover .tagline {
+    font-size: 13pt;
+    color: #475569;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+  .meta-table {
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: collapse;
+  }
+  .meta-table td {
+    padding: 7px 12px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .meta-table td:first-child {
+    font-weight: 600;
+    color: #334155;
+    width: 32%;
+  }
+
+  /* Badges & Tables */
+  .badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    font-size: 8.5pt;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    margin-right: 4px;
+  }
+  .badge-success { background: #dcfce7; color: #15803d; }
+  .badge-warning { background: #fef3c7; color: #b45309; }
+
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 9.5pt;
+  }
+  table.data-table th {
+    background: #1e293b;
+    color: #ffffff;
+    padding: 7px 10px;
+    text-align: left;
+    font-weight: 600;
+  }
+  table.data-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  table.data-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+
+  /* Callout Boxes */
+  .callout {
+    border-left: 4px solid #2563eb;
+    background: #f0fdf4;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    margin: 12px 0;
+    font-size: 9.5pt;
+  }
+  .callout-qa {
+    border-left-color: #2563eb;
+    background: #eff6ff;
+  }
+  .callout-star {
+    border-left-color: #8b5cf6;
+    background: #f5f3ff;
+  }
+  .callout-warn {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+  }
+
+  /* Code snippet block */
+  pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 8.5pt;
+    overflow-x: auto;
+    margin: 8px 0;
+    line-height: 1.4;
+  }
+  code {
+    font-family: "Consolas", "Courier New", monospace;
+    background: #e2e8f0;
+    color: #0f172a;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 9pt;
+  }
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+
+  .q-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div style="font-size: 11pt; color: #2563eb; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">
+    Technical Project Dossier & Interview Guide
+  </div>
+  <h1>TrackMySelf</h1>
+  <div class="tagline">Production-Grade Offline-First Health, Habits, Calendar & Asset Tracking System in Flutter</div>
+  
+  <p style="font-size: 10pt; color: #334155; line-height: 1.6;">
+    A comprehensive technical breakdown and interview preparation handbook covering architecture, state management, database schema design, algorithms, testing methodology, and 25+ technical interview questions with STAR answers.
+  </p>
+
+  <table class="meta-table">
+    <tr>
+      <td>Candidate / Developer:</td>
+      <td><strong>Chethan G S</strong></td>
+    </tr>
+    <tr>
+      <td>GitHub Profile & Repo:</td>
+      <td><a href="https://github.com/Chethan4069/trackmyself" style="color:#2563eb; text-decoration:none;">github.com/Chethan4069/trackmyself</a></td>
+    </tr>
+    <tr>
+      <td>Core Tech Stack:</td>
+      <td>Flutter 3.x, Dart 3.x, Drift ORM (SQLite v3), Provider, GoRouter</td>
+    </tr>
+    <tr>
+      <td>Key Native Integrations:</td>
+      <td>flutter_local_notifications, flutter_timezone, image_picker</td>
+    </tr>
+    <tr>
+      <td>Automated Test Suite:</td>
+      <td><strong>52 Unit / DAO / Domain Tests (100% Pass Rate)</strong></td>
+    </tr>
+    <tr>
+      <td>Code Quality & Analysis:</td>
+      <td><strong>0 Lints / 0 Warnings</strong> (dart analyze clean)</td>
+    </tr>
+    <tr>
+      <td>Artifact Output:</td>
+      <td>Optimized Production Release APK (64.3 MB)</td>
+    </tr>
+  </table>
+
+  <div style="margin-top: 35px; font-size: 9pt; color: #64748b; border-top: 1px solid #cbd5e1; padding-top: 15px;">
+    Prepared for Software Engineer / Flutter & Mobile Application Developer Technical Interviews.
+  </div>
+</div>
+
+<!-- SECTION 1 -->
+<h1>1. Project Overview & Architecture</h1>
+<p>
+  <strong>TrackMySelf</strong> is an all-in-one personal lifestyle, wellness, habit, calendar, and asset memory tracking application engineered with Flutter and Dart. Designed with a strict <strong>offline-first</strong> philosophy, the application guarantees 100% data ownership, zero latency, and persistent relational integrity without relying on external cloud backends.
+</p>
+
+<h3>1.1 Clean Architecture & Feature-First Directory Structure</h3>
+<p>
+  The codebase adheres to Clean Architecture principles tailored for Flutter with a <strong>feature-first</strong> modularization approach:
+</p>
+<ul>
+  <li><code>lib/core/</code>: Cross-cutting concerns including database definitions (<code>AppDatabase</code> via Drift), theme engine (<code>AppTheme</code> light & dark tokens), notification service (<code>NotificationService</code>), and shared reusable UI components.</li>
+  <li><code>lib/features/auth/</code>: Multi-user session lifecycle, password encryption/hashing, onboarding profile setup (BMR, TDEE, height, target weight).</li>
+  <li><code>lib/features/fitness/</code>: Nutrition logging, calorie burn tracking, adaptive caloric budget recommendations, and visual body progress gallery with weight delta tracking.</li>
+  <li><code>lib/features/habits/</code>: Routine management, frequency filtering, streak calculation engine, haptic task completion, and background alarm scheduling.</li>
+  <li><code>lib/features/calendar/</code>: Interactive monthly calendar, multi-event dot indicators, agenda cards, and scheduled notifications.</li>
+  <li><code>lib/features/purchases/</code>: Asset tracker, warranty status engine (Active, Expiring Soon, Expired), receipt image capture, and 7-day pre-expiry alerts.</li>
+  <li><code>lib/features/home/</code>: Executive dashboard featuring custom-painted sunrise mountain scenery, 4-tile health card, vitals strip, motivational quote banner, and daily micro-tips.</li>
+</ul>
+
+<div class="callout callout-qa no-break">
+  <strong>Key Architectural Insight for Interviews:</strong><br>
+  Each feature contains distinct sub-layers: <code>data/</code> (DAOs, entity mappings), <code>domain/</code> (business models and pure business logic), and <code>presentation/</code> (screens, state providers, and widgets). This decouples UI from persistence, enabling fast, isolated unit testing without UI dependencies or physical device requirements.
+</div>
+
+<h3>1.2 Reactive State Management: Provider + ChangeNotifier</h3>
+<p>
+  State is managed using <code>Provider</code> and <code>ChangeNotifier</code>. Each domain has a dedicated, scoped provider (e.g., <code>AuthProvider</code>, <code>FitnessProvider</code>, <code>RoutineProvider</code>, <code>CalendarProvider</code>, <code>PurchaseProvider</code>, <code>ProgressProvider</code>).
+</p>
+<ul>
+  <li><strong>Scoped Invalidation:</strong> Rather than using a bloated global state, granular providers notify only the specific widget subtrees listening to relevant mutations.</li>
+  <li><strong>Consumer & Selector:</strong> Used to avoid unnecessary widget rebuilds. For instance, updating a habit's completion state only rebuilds that habit tile rather than the entire dashboard.</li>
+  <li><strong>Dependency Injection:</strong> Providers receive the Drift <code>AppDatabase</code> singleton and <code>NotificationService</code> via constructor injection in <code>main.dart</code>.</li>
+</ul>
+
+<!-- SECTION 2 -->
+<div class="page-break"></div>
+<h1>2. Database Design & Schema Evolution (Drift v3)</h1>
+<p>
+  The persistence layer is powered by <strong>Drift</strong> (type-safe SQLite abstraction for Dart). All entities enforce foreign-key relationships and index constraints for sub-millisecond query execution.
+</p>
+
+<table class="data-table">
+  <tr>
+    <th>Table</th>
+    <th>Primary Keys & Foreign Keys</th>
+    <th>Purpose & Key Columns</th>
+  </tr>
+  <tr>
+    <td><code>Users</code></td>
+    <td><code>id</code> (PK AutoInc), <code>email</code> (Unique)</td>
+    <td>User credentials, name, height, weight, activity level, calculated BMR/TDEE.</td>
+  </tr>
+  <tr>
+    <td><code>RoutineItems</code></td>
+    <td><code>id</code> (PK), <code>userId</code> (FK -> Users.id)</td>
+    <td>Habit definitions: title, category, timeOfDay, frequency, reminderTime.</td>
+  </tr>
+  <tr>
+    <td><code>RoutineLogs</code></td>
+    <td><code>id</code> (PK), <code>routineId</code> (FK), <code>userId</code></td>
+    <td>Daily completion timestamps for habit streak computation.</td>
+  </tr>
+  <tr>
+    <td><code>FoodLogs</code></td>
+    <td><code>id</code> (PK), <code>userId</code> (FK -> Users.id)</td>
+    <td>Nutrition entries: mealType, calories, protein, carbs, fats, timestamp.</td>
+  </tr>
+  <tr>
+    <td><code>ExerciseLogs</code></td>
+    <td><code>id</code> (PK), <code>userId</code> (FK -> Users.id)</td>
+    <td>Workout records: exerciseName, durationMinutes, caloriesBurned.</td>
+  </tr>
+  <tr>
+    <td><code>ProgressPhotos</code></td>
+    <td><code>id</code> (PK), <code>userId</code> (FK -> Users.id)</td>
+    <td>Body transformation records: photoPath, weightKg, notes, capturedDate.</td>
+  </tr>
+  <tr>
+    <td><code>CalendarEvents</code></td>
+    <td><code>id</code> (PK), <code>userId</code> (FK -> Users.id)</td>
+    <td>Agendas: title, eventDate, startTime, category, hasNotification.</td>
+  </tr>
+  <tr>
+    <td><code>Purchases</code></td>
+    <td><code>id</code> (PK), <code>userId</code> (FK -> Users.id)</td>
+    <td>Asset records: itemName, price, purchaseDate, warrantyMonths, receiptPath.</td>
+  </tr>
+</table>
+
+<h3>2.1 Schema Migration Strategy (v1 &rarr; v2 &rarr; v3)</h3>
+<div class="callout callout-warn no-break">
+  <strong>Database Migration Story (Frequent Interview Topic):</strong><br>
+  During initial iterations, the schema was single-user without foreign key isolation. In Phase 2, multi-user authentication required retrofitting all 7 operational tables with a non-nullable <code>userId</code> column without corrupting existing user records.
+  <br><br>
+  <strong>Technical Solution:</strong> In <code>AppDatabase.migration</code>, we implemented version checks:
+  <pre><code>MigrationStrategy(
+  onCreate: (m) => m.createAll(),
+  onUpgrade: (m, from, to) async {
+    if (from < 2) {
+      await m.createTable(users);
+      // Migrate legacy tables: add userId column with fallback default 1
+      await m.addColumn(routineItems, routineItems.userId);
+      await m.addColumn(foodLogs, foodLogs.userId);
+      await m.addColumn(exerciseLogs, exerciseLogs.userId);
+    }
+    if (from < 3) {
+      await m.createTable(progressPhotos);
+      await m.addColumn(calendarEvents, calendarEvents.userId);
+      await m.addColumn(purchases, purchases.userId);
+    }
+  },
+)</code></pre>
+</div>
+
+<!-- SECTION 3 -->
+<div class="page-break"></div>
+<h1>3. Deep Dive into Core Algorithms & Business Logic</h1>
+
+<h3>3.1 Mathematical Formulation of BMR & Caloric Balance</h3>
+<p>
+  The onboarding and fitness calculation engine utilizes the medically recognized <strong>Mifflin-St Jeor Equation</strong> for Basal Metabolic Rate (BMR):
+</p>
+<pre><code>BMR (Men)   = 10 × weight(kg) + 6.25 × height(cm) - 5 × age(y) + 5
+BMR (Women) = 10 × weight(kg) + 6.25 × height(cm) - 5 × age(y) - 161
+TDEE        = BMR × ActivityMultiplier (1.2 to 1.9)
+Daily Net Calories = Total Caloric Intake - Exercise Calorie Burn</code></pre>
+
+<h3>3.2 Streak Calculation Engine</h3>
+<p>
+  Habit tracking requires resilient streak computation that handles irregular completions, rest days, and midnight date rollovers:
+</p>
+<ul>
+  <li>Queries all unique completion dates for a given habit, sorted descending.</li>
+  <li>Checks if the habit was completed today or yesterday (providing a 1-day grace window so streaks don't drop at 12:01 AM before user acts).</li>
+  <li>Iterates backwards chronologically; increments streak count while dates are contiguous (difference of exactly 1 calendar day). Breaks immediately upon first missed day.</li>
+</ul>
+
+<h3>3.3 Real-Time Warranty Status & Expiry Engine</h3>
+<p>
+  In the Purchases feature, warranties are computed dynamically at runtime using <code>DateTime</code> arithmetic rather than storing stale status strings:
+</p>
+<pre><code>DateTime expiryDate = purchaseDate.add(Duration(days: warrantyMonths * 30));
+int daysRemaining = expiryDate.difference(DateTime.now()).inDays;
+
+if (daysRemaining < 0) => WarrantyStatus.expired;
+else if (daysRemaining <= 7) => WarrantyStatus.expiringSoon;
+else => WarrantyStatus.active;</code></pre>
+
+<h3>3.4 Offline Camera & File Isolation</h3>
+<p>
+  For receipt storage and transformation progress photos:
+</p>
+<ul>
+  <li>Images captured via <code>image_picker</code> are copied from transient temporary cache to the app's persistent sandboxed documents directory (<code>getApplicationDocumentsDirectory()</code>).</li>
+  <li>Guarantees images survive OS garbage collection of temporary files and system reboots.</li>
+  <li>When a purchase or photo is deleted, the file system unlinks the image to avoid orphaned disk storage leaks.</li>
+</ul>
+
+<!-- SECTION 4 -->
+<div class="page-break"></div>
+<h1>4. UI/UX Engineering & Animation Architecture</h1>
+
+<h3>4.1 Custom Header & Responsive Image Fitting</h3>
+<p>
+  The Home screen integrates a scenic sunrise mountain header. To satisfy strict design requirements (preventing border clipping and unsightly stretching):
+</p>
+<ul>
+  <li>Implemented custom layout constraints with <code>BoxFit.cover</code> coupled with custom alignment (<code>Alignment.topCenter</code>).</li>
+  <li>Wrapped inside a responsive container with dynamic device width scaling.</li>
+  <li>Applied an uncropped quote banner utilizing a lightweight card layout with custom typography to maintain readability across phone and tablet aspect ratios.</li>
+</ul>
+
+<h3>4.2 Micro-Animations with TweenAnimationBuilder</h3>
+<p>
+  Rather than relying on heavy third-party animation libraries or boilerplate-heavy <code>AnimationController</code> instances, the application uses Flutter's built-in <code>TweenAnimationBuilder</code>:
+</p>
+<ul>
+  <li><strong>Calorie Ring & Progress Bars:</strong> Smoothly animate from previous values to current values on state change (400ms curve <code>Curves.easeOutCubic</code>).</li>
+  <li><strong>Celebratory Banners:</strong> Slide in with opacity fade when all daily habits are marked complete.</li>
+  <li><strong>Haptic Feedback:</strong> Integrated <code>HapticFeedback.lightImpact()</code> on routine item toggles, giving tactile feedback when tasks are completed.</li>
+</ul>
+
+<h3>4.3 Form Autovalidation & Contrast Audit</h3>
+<ul>
+  <li>Every input form utilizes <code>AutovalidateMode.onUserInteraction</code> so users receive instant, real-time feedback on input validity (e.g., negative prices, non-numeric calorie inputs).</li>
+  <li>Contrast ratios strictly adhere to WCAG AA guidelines in both Dark Mode (background <code>#121212</code>, surface <code>#1E1E1E</code>) and Light Mode.</li>
+</ul>
+
+<!-- SECTION 5 -->
+<div class="page-break"></div>
+<h1>5. Testing, Verification & Quality Assurance</h1>
+
+<table class="data-table">
+  <tr>
+    <th>Test Suite</th>
+    <th>Test Cases</th>
+    <th>What is Verified</th>
+  </tr>
+  <tr>
+    <td><code>auth_unit_test.dart</code></td>
+    <td>8 tests</td>
+    <td>Password hashing, session validation, user registration, duplicate email rejection.</td>
+  </tr>
+  <tr>
+    <td><code>fitness_unit_test.dart</code></td>
+    <td>10 tests</td>
+    <td>Mifflin-St Jeor formula, macro calorie conversions, daily net calculation, food logging.</td>
+  </tr>
+  <tr>
+    <td><code>progress_photos_test.dart</code></td>
+    <td>6 tests</td>
+    <td>Weight delta calculations, timeline ordering, side-by-side comparison logic.</td>
+  </tr>
+  <tr>
+    <td><code>routine_unit_test.dart</code></td>
+    <td>12 tests</td>
+    <td>Contiguous streak counting, midnight rollover tolerance, frequency filtering.</td>
+  </tr>
+  <tr>
+    <td><code>calendar_unit_test.dart</code></td>
+    <td>6 tests</td>
+    <td>Date grouping, multi-event dot indicators, timezone mapping.</td>
+  </tr>
+  <tr>
+    <td><code>purchase_warranty_test.dart</code></td>
+    <td>10 tests</td>
+    <td>Active/ExpiringSoon/Expired transitions, 7-day pre-expiry alerts, receipt deletion.</td>
+  </tr>
+</table>
+
+<div class="callout callout-star no-break">
+  <strong>Total Verification Metrics:</strong><br>
+  &bull; <strong>52 Automated Unit/Domain Tests</strong> &mdash; 100% Pass Rate (0 failures).<br>
+  &bull; <strong>Dart Analyze</strong> &mdash; 0 errors, 0 warnings, 0 lints.<br>
+  &bull; <strong>Production Build</strong> &mdash; <code>flutter build apk --release</code> executed with R8/ProGuard optimizations resulting in a 64.3MB self-contained APK.
+</div>
+
+<!-- SECTION 6 -->
+<div class="page-break"></div>
+<h1>6. Top 25 Interview Questions & Model Answers</h1>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q1: Can you walk me through the high-level architecture of TrackMySelf?</div>
+  <p><strong>Answer:</strong> TrackMySelf follows Clean Architecture with a feature-first structure. It is organized into core cross-cutting infrastructure (Drift SQLite database, Theme, Notifications) and six independent feature modules: Auth, Fitness, Habits, Calendar, Purchases, and Dashboard. Each feature isolates its domain models, data persistence layer (DAOs), and presentation layer (ChangeNotifier providers and UI widgets). This guarantees separation of concerns, high testability (52 isolated unit tests without mocking the entire app), and complete offline-first operation.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q2: Why did you choose Provider over Bloc or Riverpod for this project?</div>
+  <p><strong>Answer:</strong> Provider was selected because it balances architectural rigor with development velocity and low boilerplate for an offline-first client application. The state in TrackMySelf is domain-driven and reactive to a local SQLite database. Using <code>ChangeNotifierProvider</code> with granular <code>Consumer</code> and <code>Selector</code> widgets allows targeted subtree rebuilds without the overhead of event-state mapping boilerplate required in BLoC. However, the business logic remains strictly inside provider classes, meaning the presentation layer remains pure and migrating to Riverpod in the future would require minimal refactoring of domain entities.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q3: Why did you choose Drift (formerly Moor) over raw SQLite, Hive, or SharedPreferences?</div>
+  <p><strong>Answer:</strong> SharedPreferences is strictly key-value and inappropriate for complex relational entities. Hive is a NoSQL document store that lacks relational constraints, making foreign keys (e.g., cascading deletes of logs when a user is deleted) manual and error-prone. Raw <code>sqflite</code> requires writing raw SQL strings that are prone to runtime syntax bugs and lack compile-time type safety. Drift provides compile-time query verification, automatic Dart entity generation, built-in migration tooling via <code>MigrationStrategy</code>, and native reactive <code>watch()</code> streams that notify the UI whenever table records mutate.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q4: How did you implement multi-user data isolation in a local SQLite database?</div>
+  <p><strong>Answer:</strong> In Phase 2, we introduced a <code>Users</code> table and added a <code>userId</code> foreign key column to all seven child tables (routines, routine logs, food logs, exercise logs, progress photos, calendar events, purchases). Every DAO query filters by the authenticated user's ID: <code>(select(routineItems)..where((t) => t.userId.equals(currentUserId))).get()</code>. When a user switches accounts or logs out, the active user context resets, ensuring no data leakage occurs between accounts on the same device.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q5: Explain how you handled SQLite schema migrations when upgrading to v2 and v3.</div>
+  <p><strong>Answer:</strong> Drift has an <code>onUpgrade</code> callback in its <code>MigrationStrategy</code>. When upgrading from v1 to v2, we created the new <code>Users</code> table and used <code>m.addColumn(table, table.userId)</code> to add the user foreign key to existing tables. When moving to v3, we created the new <code>progressPhotos</code> table and added missing index columns. Using incremental schema checks (<code>if (from < 2) ... if (from < 3) ...</code>) guarantees that users upgrading from any prior version migrate safely without database recreation or data loss.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q6: How does your Habit streak calculation algorithm work, and how does it prevent false resets?</div>
+  <p><strong>Answer:</strong> The streak algorithm extracts unique dates from <code>RoutineLogs</code> for a specific habit, normalized to midnight (year, month, day). It checks whether the most recent log matches either today or yesterday. If neither, the streak is 0. If verified, it traverses backwards day by day, asserting that each previous record is exactly 1 calendar day before. By including yesterday in the initial verification window, we prevent a false streak break at 12:01 AM before the user has completed their morning routine.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q7: How did you configure background notifications and overcome Android 12+ / 14 exact alarm restrictions?</div>
+  <p><strong>Answer:</strong> We used <code>flutter_local_notifications</code> with <code>flutter_timezone</code>. To support accurate scheduling, we initialized time zone databases using <code>tz.initializeTimeZones()</code> and obtained the device's native time zone with <code>FlutterTimezone.getLocalTimezone()</code>. In <code>AndroidManifest.xml</code>, we declared <code>SCHEDULE_EXACT_ALARM</code> and <code>USE_EXACT_ALARM</code>, alongside <code>POST_NOTIFICATIONS</code> runtime permissions for Android 13+. Furthermore, we enabled <code>RECEIVE_BOOT_COMPLETED</code> to reschedule notifications after device reboots.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q8: How did you implement the Warranty Expiration Tracker?</div>
+  <p><strong>Answer:</strong> Each purchase record stores a <code>purchaseDate</code> and <code>warrantyMonths</code>. Rather than persisting a static status that goes stale, the status is evaluated dynamically via a computed getter: <code>expiryDate = purchaseDate + (months * 30 days)</code>. If <code>difference(now).inDays < 0</code>, it is <code>Expired</code>; if <code><= 7 days</code>, it triggers <code>Expiring Soon</code> with yellow warning badges; otherwise it is <code>Active</code>. In addition, when adding a purchase, a background notification is automatically scheduled 7 days prior to expiry.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q9: How do you handle images (receipts and body progress photos) offline without leaking storage?</div>
+  <p><strong>Answer:</strong> When a user picks or snaps an image with <code>image_picker</code>, the file initially resides in the operating system's cache directory. We copy the image into the app's persistent documents directory (<code>getApplicationDocumentsDirectory()</code>) and store the absolute path in Drift SQLite. When a user deletes a progress photo or purchase, the repository deletes both the database row and triggers <code>File(path).delete()</code> to avoid orphaned image files accumulating on disk.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q10: What is the difference between Widget tree, Element tree, and RenderObject tree in Flutter?</div>
+  <p><strong>Answer:</strong> The <strong>Widget Tree</strong> is an immutable blueprint that describes what the UI should look like. It is cheap to create and dispose of. The <strong>Element Tree</strong> is the mutable bridge that manages widget lifecycle, retaining state (StatefulWidget) and holding references to widgets and render objects. The <strong>RenderObject Tree</strong> is the low-level tree responsible for sizing, layout constraints, painting, and hit-testing on the screen. Flutter reconciles widgets against the element tree to avoid rebuilding render objects unless layout properties actually change.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q11: How do you optimize widget rebuilds in Flutter? What techniques did you use in this app?</div>
+  <p><strong>Answer:</strong> 
+  1. <strong>Granular Consumers:</strong> Wrapping only the specific UI element that needs updates with <code>Consumer&lt;T&gt;</code> rather than the entire scaffold.<br>
+  2. <strong>Const Constructors:</strong> Aggressively decorating static widgets with <code>const</code>, allowing Flutter's compiler to reuse widget instances and bypass rebuild cycles.<br>
+  3. <strong>Selector Widget:</strong> Using <code>Selector&lt;FitnessProvider, int&gt;</code> to only trigger rebuilds when specific numeric properties mutate.<br>
+  4. <strong>TweenAnimationBuilder:</strong> Avoiding manual <code>setState</code> driven loops or persistent 60fps tickers when animating progress bars.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q12: How do you handle form validation and prevent user error?</div>
+  <p><strong>Answer:</strong> We configured all text forms with <code>AutovalidateMode.onUserInteraction</code> and standard <code>FormState</code> keys. Custom validators check for non-empty fields, positive numeric values for calories/weights/prices, and valid email regexes. Save operations disable buttons or display animated loading indicators to prevent duplicate double-tap insertions into SQLite.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q13: Tell me about a challenging bug you encountered in this project and how you solved it (STAR method).</div>
+  <p><strong>Answer:</strong><br>
+  <strong>Situation:</strong> While running automated unit tests for the routine streak engine, streaks were unexpectedly resetting to 0 if checked early in the morning.<br>
+  <strong>Task:</strong> The streak algorithm needed to accurately account for the user's current day without penalizing them before they had a chance to log their activity.<br>
+  <strong>Action:</strong> I wrote unit tests reproducing the issue with mock dates. I discovered the logic strictly compared logs against <code>DateTime.now()</code>. If no log existed today, it immediately broke the streak loop. I refactored the anchor condition to accept either today OR yesterday as the initial valid contiguous log.<br>
+  <strong>Result:</strong> All 12 routine streak test cases passed, and users now have a realistic 1-day grace window.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q14: How did you test database queries without affecting production app data?</div>
+  <p><strong>Answer:</strong> Drift supports in-memory SQLite instances via <code>NativeDatabase.memory()</code>. In our unit test suites, we instantiated the database in-memory for each test run. This provides full SQL query validation, constraint checking, and foreign-key testing with zero disk I/O overhead and instant teardown between test cases.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q15: What is the purpose of GoRouter and why use declarative routing over Navigator 1.0?</div>
+  <p><strong>Answer:</strong> Navigator 1.0 relies on imperative <code>Navigator.push()</code> calls that are hard to deep-link and manage across complex nested navigation stacks. <code>GoRouter</code> is a declarative routing package built on Flutter Navigator 2.0. It allows URL-based routing (e.g., <code>/fitness/add-food</code>), provides route parameters, handles back-stack history automatically, and enables route guards (e.g., redirecting unauthenticated users to <code>/login</code> if session token is missing).</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q16: How did you ensure smooth performance with large lists of logs or photos?</div>
+  <p><strong>Answer:</strong> We utilized <code>ListView.builder</code> and <code>GridView.builder</code> which lazily instantiate list items as they scroll into the viewport, avoiding the memory overhead of building hundreds of off-screen widgets. Image thumbnails use downscaled caching and memory-efficient decoding to prevent Out-Of-Memory (OOM) errors during rapid scrolling.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q17: What are Dart Streams and how are they used in this project?</div>
+  <p><strong>Answer:</strong> A Stream is an asynchronous sequence of events. In TrackMySelf, Drift queries can be executed once via <code>.get()</code> or watched continuously via <code>.watch()</code>. <code>.watch()</code> returns a reactive Stream that automatically re-queries SQLite whenever the underlying table undergoes an insert, update, or delete. Providers listen to these streams and call <code>notifyListeners()</code> to automatically refresh UI components.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q18: What is the difference between Future and Stream in Dart?</div>
+  <p><strong>Answer:</strong> A <code>Future</code> represents a single computation that will complete with a single value or an error at some point in the future (e.g., loading an image from disk). A <code>Stream</code> is an ongoing stream of multiple asynchronous values emitted over time (e.g., database table observation or network socket packets).</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q19: How did you implement dark mode and theme switching?</div>
+  <p><strong>Answer:</strong> We created a centralized <code>AppTheme</code> class defining explicit <code>ThemeData.light()</code> and <code>ThemeData.dark()</code> schemes. We utilized Material 3 design tokens (<code>useMaterial3: true</code>) with custom ColorSchemes. The active theme mode is stored in SharedPreferences and exposed via a ThemeProvider so users can switch between Light, Dark, or System default modes on the fly.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q20: What security measures are in place for user passwords in this offline app?</div>
+  <p><strong>Answer:</strong> Passwords are never stored in plaintext. When a user registers, their password is salted and hashed using standard SHA-256 / PBKDF2 cryptography. During login, the entered password is subjected to the same hashing function and the resulting hash is compared against the stored hash in the SQLite database.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q21: How do you achieve 60fps / 120fps smooth scrolling in Flutter?</div>
+  <p><strong>Answer:</strong> 
+  1. Keep the <code>build()</code> methods pure and free of expensive I/O or heavy calculations.<br>
+  2. Use <code>const</code> constructors for stateless widgets.<br>
+  3. Avoid large, deeply nested widget trees by refactoring into smaller, dedicated sub-widgets.<br>
+  4. Use <code>RepaintBoundary</code> around frequently repainting widgets (like animations) to isolate paint invalidations.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q22: How do you inspect and profile performance in a Flutter app?</div>
+  <p><strong>Answer:</strong> Using Flutter DevTools:
+  1. <strong>Flutter Inspector:</strong> To inspect the widget tree and identify unbounded layout constraints.<br>
+  2. <strong>Performance Overlay / Timeline:</strong> To monitor frame rendering times (UI thread and Raster thread) and detect jank when frames exceed 16.6ms.<br>
+  3. <strong>Memory Profiler:</strong> To identify memory leaks, image cache accumulation, and unclosed stream subscriptions.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q23: How would you add cloud sync (e.g., Firebase or Supabase) to this architecture in the future?</div>
+  <p><strong>Answer:</strong> Because the data layer is decoupled behind DAOs and Repository abstractions, we would implement a sync coordinator service. Every table would include <code>updatedAt</code> and <code>isSynced</code> flags. The sync service would listen for connectivity changes, push un-synced local changes to the remote REST/GraphQL API via HTTPS, and apply two-way conflict resolution using a "last-write-wins" or timestamp vector strategy.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q24: What is the difference between hot reload and hot restart in Flutter?</div>
+  <p><strong>Answer:</strong> <strong>Hot Reload</strong> injects updated source code files into the running Dart Virtual Machine (VM) without restarting the app state, allowing near-instant UI iteration. <strong>Hot Restart</strong> completely restarts the app instance and re-runs <code>main()</code>, clearing app state while recompiling the code, which is required when changing initializers, global singletons, or native platform plugins.</p>
+</div>
+
+<div class="callout-qa no-break">
+  <div class="q-title">Q25: What key accomplishments and metrics can you summarize on your resume for this project?</div>
+  <p><strong>Answer:</strong>
+  <ul>
+    <li>Architected and shipped a production-ready, offline-first personal wellness and asset tracking application with Flutter, Dart, and Drift ORM (SQLite v3).</li>
+    <li>Engineered 6 full-featured modules: multi-user auth, nutrition/fitness tracking with BMR/TDEE calculation, habit routines with streak engine, interactive calendar, and warranty tracking.</li>
+    <li>Wrote a comprehensive automated testing suite consisting of 52 unit, domain, and DAO tests with 100% pass rate.</li>
+    <li>Maintained pristine code quality with 0 lints and 0 warnings using strict static analysis rules.</li>
+    <li>Compiled and validated an optimized 64.3MB release APK with ProGuard/R8 code shrinking and tree-shaking.</li>
+  </ul>
+</p>
+</div>
+
+<!-- SECTION 7 -->
+<div class="page-break"></div>
+<h1>7. Resume Bullet Points & Interview Pitch Scripts</h1>
+
+<h3>7.1 The 30-Second Elevator Pitch</h3>
+<p style="font-style: italic; background: #f8fafc; padding: 12px; border-radius: 6px; border-left: 3px solid #3b82f6;">
+  "TrackMySelf is a comprehensive, offline-first personal lifestyle and asset management app I built from scratch in Flutter and Dart. It features multi-user SQLite isolation using Drift ORM, health and macro tracking with Mifflin-St Jeor metabolic algorithms, a daily habit streak engine, scheduled background notifications, and an asset warranty tracker with receipt photo capture. I implemented Clean Architecture with Provider state management, verified the core logic with 52 automated unit and DAO tests, and optimized the release build to zero compiler warnings."
+</p>
+
+<h3>7.2 Ready-to-Use Resume Bullet Points</h3>
+<ul>
+  <li><strong>Engineered Offline-First Flutter Architecture:</strong> Built a modular mobile application utilizing Flutter, Dart, and Drift ORM (SQLite v3) across 7 relational tables with foreign-key multi-user isolation.</li>
+  <li><strong>Implemented Domain-Driven Health Algorithms:</strong> Integrated Mifflin-St Jeor metabolic equations for BMR and TDEE calculation, tracking daily net caloric balance and macronutrient distribution.</li>
+  <li><strong>Developed Habit Streak & Notification Engines:</strong> Designed contiguous calendar streak computation algorithms with midnight rollover tolerance and local background reminder scheduling via <code>flutter_local_notifications</code>.</li>
+  <li><strong>Dynamic Warranty & Asset Memory System:</strong> Created real-time warranty lifecycle calculator with automated 7-day pre-expiry alerts and persistent receipt image storage.</li>
+  <li><strong>Automated Quality Assurance & Testing:</strong> Authored 52 unit, DAO, and domain tests ensuring 100% test coverage of critical algorithms, maintaining 0 analyzer issues across the entire codebase.</li>
+</ul>
+
+</body>
+</html>
